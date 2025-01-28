@@ -1,10 +1,12 @@
 # from https://www.tensorflow.org/tutorials/quickstart/advanced
 
 import tensorflow as tf
+import tensorflow_datasets as tfds
 print("TensorFlow version:", tf.__version__)
 
-from tensorflow.keras.layers import Dense, Flatten, Conv2D
-from tensorflow.keras import Model
+from tensorflow import keras
+from keras._tf_keras.keras.layers import Dense, Flatten, Conv2D
+from keras._tf_keras.keras import Model
 
 mnist = tf.keras.datasets.mnist
 
@@ -92,3 +94,5 @@ for epoch in range(EPOCHS):
     f'Test Loss: {test_loss.result():0.2f}, '
     f'Test Accuracy: {test_accuracy.result() * 100:0.2f}'
   )
+
+model.save("model.keras")

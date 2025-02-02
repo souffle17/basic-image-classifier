@@ -1,3 +1,4 @@
+from turtle import color
 import numpy as np
 import os
 import keras._tf_keras.keras
@@ -20,7 +21,7 @@ while 1==1:
 
             pred = model.predict(input_arr)
             predicted_class = np.argmax(pred, axis=1)
-            print(f"Predicted class: {class_names[predicted_class[0]]}")
+            print("Predicted class: " + '\033[1m' + class_names[predicted_class[0]] + '\033[0m')
             print(f"Probabilities: {pred}")
         except:
             print("Not an image")
